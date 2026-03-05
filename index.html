@@ -467,6 +467,7 @@ button { font-family: var(--font); }
   margin-top: 24px; font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);
   transition: gap 0.4s var(--ease-smooth), color 0.4s;
+  text-decoration: none;
 }
 .partner-card:hover .partner-arrow { gap: 14px; color: var(--white); }
 
@@ -1417,7 +1418,7 @@ button { font-family: var(--font); }
     </div>
     <div class="hero-side">
       <div class="hero-side-label">Project Duration</div>
-      <div class="hero-side-phase">2024 &mdash; 2026</div>
+      <div class="hero-side-phase">2025 &mdash; 2026</div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1479,24 +1480,7 @@ button { font-family: var(--font); }
         </div>
       </div>
     </div>
-    <div class="stats-row">
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="22">0</div>
-        <div class="stat-label">Schools Engaged</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="2000">0<span class="stat-suffix">+</span></div>
-        <div class="stat-label">Students Participated</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="110">0</div>
-        <div class="stat-label">Monitoring Points</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="15">0</div>
-        <div class="stat-label">Wells Installed</div>
-      </div>
-    </div>
+    <div class="stats-row" id="statsRow"></div>
   </div>
 </section>
 
@@ -1517,7 +1501,7 @@ button { font-family: var(--font); }
         <h3>IWMI</h3>
         <div class="partner-full">International Water Management Institute</div>
         <p>Lead research institution driving the scientific investigation and coordinating multi-stakeholder engagement for sustainable groundwater solutions.</p>
-        <div class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <a href="https://www.iwmi.org/" target="_blank" rel="noopener" class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="partner-card reveal">
         <img class="partner-logo" src="logos/fcdo-logo.svg" alt="FCDO Logo">
@@ -1525,7 +1509,7 @@ button { font-family: var(--font); }
         <h3>FCDO</h3>
         <div class="partner-full">UK Foreign, Commonwealth & Development Office</div>
         <p>Primary funding partner supporting research-driven development initiatives that strengthen climate resilience and sustainable resource governance.</p>
-        <div class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <a href="https://www.gov.uk/government/organisations/foreign-commonwealth-development-office" target="_blank" rel="noopener" class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="partner-card reveal">
         <img class="partner-logo" src="logos/northern-province-sri-lanka-emblem.jpg" alt="Northern Province Emblem">
@@ -1533,7 +1517,7 @@ button { font-family: var(--font); }
         <h3>Northern Province</h3>
         <div class="partner-full">Northern Provincial Council — Sri Lanka</div>
         <p>Regional governance partner providing institutional support, local coordination, and policy alignment for sustainable groundwater management across the Jaffna Peninsula.</p>
-        <div class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <a href="https://np.gov.lk/" target="_blank" rel="noopener" class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1638,7 +1622,7 @@ button { font-family: var(--font); }
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2024–2026 Jaffna Groundwater Management Project. All rights reserved.</p>
+    <p>&copy; 2025–2026 Jaffna Groundwater Management Project. All rights reserved.</p>
     <p>Led by IWMI &bull; Supported by UK FCDO</p>
   </div>
 </footer>
@@ -1685,6 +1669,7 @@ button { font-family: var(--font); }
         <button class="cms-tab active" data-tab="timeline">Timeline</button>
         <button class="cms-tab" data-tab="gallery">Gallery</button>
         <button class="cms-tab" data-tab="team">Team</button>
+        <button class="cms-tab" data-tab="stats">Stats</button>
       </div>
     </div>
     <div class="cms-bar-actions">
@@ -1692,6 +1677,7 @@ button { font-family: var(--font); }
       <button class="cms-btn primary cms-for-timeline" id="cmsAddMilestone">+ Milestone</button>
       <button class="cms-btn primary cms-for-gallery" id="cmsAddGalleryItem" style="display:none;">+ Add Image</button>
       <button class="cms-btn primary cms-for-team" id="cmsAddTeamMember" style="display:none;">+ Add Member</button>
+      <button class="cms-btn primary cms-for-stats" id="cmsAddStat" style="display:none;">+ Add Stat</button>
       <button class="cms-btn" id="cmsExport">Export</button>
       <label class="cms-btn" style="cursor:pointer;">Import <input type="file" id="cmsImport" accept=".json" style="display:none;"></label>
       <button class="cms-btn" id="cmsReset">Reset</button>
@@ -1749,6 +1735,12 @@ button { font-family: var(--font); }
           <div class="cms-field-hint">Upload an image or paste a URL. First image spans two columns.</div>
         </div>
       </div>
+      <!-- Stat fields -->
+      <div id="cmsStatFields" style="display:none;">
+        <div class="cms-field"><label>Number</label><input id="cmsStatValue" type="number" placeholder="22"></div>
+        <div class="cms-field"><label>Suffix (optional, e.g. "+" or "%")</label><input id="cmsStatSuffix" placeholder="+" maxlength="5"></div>
+        <div class="cms-field"><label>Label</label><input id="cmsStatLabel" placeholder="Schools Engaged"></div>
+      </div>
       <!-- Team member fields -->
       <div id="cmsTeamFields" style="display:none;">
         <div class="cms-field"><label>Name</label><input id="cmsTeamName" placeholder="Dr. Jane Doe"></div>
@@ -1781,37 +1773,37 @@ button { font-family: var(--font); }
    DEFAULT TIMELINE DATA
    ═══════════════════════════════════════════ */
 const DEFAULT_TIMELINE = [
-  { type:'phase', label:'Phase 1', name:'Foundation', period:'2024 \u2013 June 2025' },
-  { type:'milestone', phase:'Phase 1.1', date:'Jan \u2013 Feb 2024', title:'Stakeholder Mobilization & Problem Mapping',
+  { type:'phase', label:'Phase 1', name:'Foundation', period:'2025 \u2013 June 2025' },
+  { type:'milestone', phase:'Phase 1.1', date:'Jan \u2013 Feb 2025', title:'Stakeholder Mobilization & Problem Mapping',
     summary:'Initial consultations to identify groundwater challenges and build consensus on the MSP.',
     desc:'Conducted initial consultations with government agencies, academics, NGOs, and community leaders to identify groundwater challenges and build consensus on the need for a Multi-Stakeholder Platform.',
     bullets:['Identified groundwater challenges: salinity, overuse, pollution, and poor data availability','Lack of evidence-based decision on natural resources management, specifically groundwater','Built consensus on the need for a Multi-Stakeholder Platform (MSP) for efficient decision making at higher level'], photo:'' },
-  { type:'milestone', phase:'Phase 1.2', date:'Mar \u2013 May 2024', title:'Establishing the Multi-Stakeholder Platform (MSP)',
+  { type:'milestone', phase:'Phase 1.2', date:'Mar \u2013 May 2025', title:'Establishing the Multi-Stakeholder Platform (MSP)',
     summary:'MSP co-designed to enhance institutional collaboration and improve decision-making.',
     desc:'MSP concept co-designed to enhance institutional collaboration and improve decision-making for sustainable groundwater resource management.',
-    bullets:['Steering committee + thematic working groups drafted','Terms of Reference (TOR) created with clear coordination and governance roles','First MSP meeting held on May 9, 2024, with 45+ participants','Focus on data sharing, policy harmonization, community engagement, and capacity building'], photo:'' },
-  { type:'milestone', phase:'Phase 1.3', date:'Jun \u2013 Sep 2024', title:'School-Based Citizen Science Rollout',
+    bullets:['Steering committee + thematic working groups drafted','Terms of Reference (TOR) created with clear coordination and governance roles','First MSP meeting held with 45+ participants','Focus on data sharing, policy harmonization, community engagement, and capacity building'], photo:'' },
+  { type:'milestone', phase:'Phase 1.3', date:'Jun \u2013 Sep 2025', title:'School-Based Citizen Science Rollout',
     summary:'22 schools selected with 2,000+ students in the Groundwater Awareness program.',
     desc:'22 schools selected focusing on enhancing awareness, with more than 2,000 students participating in the Groundwater Awareness program.',
     bullets:['110 monitoring points established with student-led data collection','First wave of groundwater level and EC readings published','Students trained in basic hydrogeology, water testing protocols, and data recording','Monthly data submitted via mobile app and web portal'], photo:'' },
-  { type:'milestone', phase:'Phase 1.4', date:'Aug \u2013 Nov 2024', title:'Groundwater Monitoring Network Established',
+  { type:'milestone', phase:'Phase 1.4', date:'Aug \u2013 Nov 2025', title:'Groundwater Monitoring Network Established',
     summary:'15 monitoring wells installed with automated real-time data collection.',
     desc:'Enhancement of scientific evidence-based decisions through 15 monitoring wells installed across the peninsula, targeting production-scale groundwater extraction locations.',
     bullets:['Automated, real-time groundwater level & quality monitoring initiated','Instrumentation, GIS integration completed','Sensors installed to measure water level, temperature, pH, and electrical conductivity','Data transmitted hourly to central database for analysis and visualization'], photo:'' },
-  { type:'milestone', phase:'Phase 1.5', date:'Dec 2024 \u2013 Mar 2025', title:'Data Integration & Early Analysis',
+  { type:'milestone', phase:'Phase 1.5', date:'Dec 2025 \u2013 Mar 2026', title:'Data Integration & Early Analysis',
     summary:'Citizen science data integrated with monitoring network; interactive dashboards developed.',
     desc:'Integration of citizen science data with automated monitoring network and development of interactive dashboards for stakeholders.',
     bullets:['Preliminary analysis revealing seasonal groundwater level fluctuations and salinity intrusion patterns','Identification of critical zones requiring immediate intervention','Second MSP meeting convened to review initial findings'], photo:'' },
-  { type:'milestone', phase:'Phase 1.6', date:'Apr \u2013 Jun 2025', title:'Phase 1 Wrap-Up & Learnings',
+  { type:'milestone', phase:'Phase 1.6', date:'Apr \u2013 Jun 2026', title:'Phase 1 Wrap-Up & Learnings',
     summary:'MSP validated with quarterly meetings; citizen science model proven with high engagement.',
     desc:'MSP structure validated with successful quarterly meetings and working group outputs. Citizen science model proven successful with high student and teacher engagement.',
     bullets:['Data gaps documented for Phase 2, including need for expanded spatial coverage','Need for groundwater policy reform identified','Phase 1 evaluation documenting successes, challenges, and recommendations','Stakeholder feedback collected for Phase 2 design refinements'], photo:'' },
-  { type:'phase', label:'Phase 2', name:'Expansion', period:'July 2025 \u2013 December 2026' },
-  { type:'milestone', phase:'Phase 2.1', date:'Jul \u2013 Sep 2025', title:'Phase 2 Launch & Expansion Planning',
+  { type:'phase', label:'Phase 2', name:'Expansion', period:'July 2026 \u2013 December 2026' },
+  { type:'milestone', phase:'Phase 2.1', date:'Jul \u2013 Sep 2026', title:'Phase 2 Launch & Expansion Planning',
     summary:'Scale-up strategy finalized based on Phase 1 learnings.',
     desc:'Scale-up strategy finalized based on Phase 1 learnings, with additional funding secured for expanded monitoring network.',
     bullets:['Partnerships formalized with regional water authorities and international research institutions','Recruitment of additional technical staff and field coordinators'], photo:'' },
-  { type:'milestone', phase:'Phase 2.2', date:'Oct \u2013 Dec 2025', title:'Expanded Citizen Science Program',
+  { type:'milestone', phase:'Phase 2.2', date:'Oct \u2013 Dec 2026', title:'Expanded Citizen Science Program',
     summary:'Program expanded to 50+ schools with 5,000+ students engaged.',
     desc:'Program expanded to 50+ schools across Jaffna District with a target of 5,000+ students engaged in groundwater monitoring.',
     bullets:['Advanced training modules introduced: GIS mapping, water quality analysis, community reporting','Development of youth ambassador program for peer education'], photo:'' },
@@ -1860,6 +1852,16 @@ const DEFAULT_TEAM = [
 ];
 
 /* ═══════════════════════════════════════════
+   DEFAULT STATS DATA
+   ═══════════════════════════════════════════ */
+const DEFAULT_STATS = [
+  { value: 22, suffix: '', label: 'Schools Engaged' },
+  { value: 2000, suffix: '+', label: 'Students Participated' },
+  { value: 110, suffix: '', label: 'Monitoring Points' },
+  { value: 15, suffix: '', label: 'Wells Installed' }
+];
+
+/* ═══════════════════════════════════════════
    DATA LAYER (localStorage)
    ═══════════════════════════════════════════ */
 /* ─── Supabase Client ─── */
@@ -1877,6 +1879,7 @@ async function saveSection(section, data) {
 function saveData(items) { saveSection('timeline', items); }
 function saveGallery(items) { saveSection('gallery', items); }
 function saveTeam(items) { saveSection('team', items); }
+function saveStats(items) { saveSection('stats', items); }
 
 async function fetchSection(section) {
   const { data, error } = await sb.from('site_content')
@@ -1890,6 +1893,7 @@ function getDefaults(section) {
   if (section === 'timeline') return JSON.parse(JSON.stringify(DEFAULT_TIMELINE));
   if (section === 'gallery') return JSON.parse(JSON.stringify(DEFAULT_GALLERY));
   if (section === 'team') return JSON.parse(JSON.stringify(DEFAULT_TEAM));
+  if (section === 'stats') return JSON.parse(JSON.stringify(DEFAULT_STATS));
 }
 
 /* ─── Image upload to Supabase Storage ─── */
@@ -1931,19 +1935,22 @@ function resizeImage(file, maxW, maxH) {
 let currentData = JSON.parse(JSON.stringify(DEFAULT_TIMELINE));
 let currentGalleryData = JSON.parse(JSON.stringify(DEFAULT_GALLERY));
 let currentTeamData = JSON.parse(JSON.stringify(DEFAULT_TEAM));
+let currentStatsData = JSON.parse(JSON.stringify(DEFAULT_STATS));
 let milestoneIndex = 0; // for alternating sides
 let cmsActiveTab = 'timeline';
 
 // Load data from Supabase (async, replaces defaults when ready)
 (async function loadRemoteData() {
-  const [tl, gal, tm] = await Promise.all([
+  const [tl, gal, tm, st] = await Promise.all([
     fetchSection('timeline'),
     fetchSection('gallery'),
-    fetchSection('team')
+    fetchSection('team'),
+    fetchSection('stats')
   ]);
   if (tl) { currentData = tl; renderTimeline(); }
   if (gal) { currentGalleryData = gal; renderGallery(); }
   if (tm) { currentTeamData = tm; renderTeam(); }
+  if (st) { currentStatsData = st; renderStats(); }
 })();
 
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
@@ -2053,6 +2060,54 @@ function openLightbox(idx) {
   lightboxDesc.textContent = item.desc || '';
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
+}
+
+/* ═══════════════════════════════════════════
+   STATS COUNTER ANIMATION
+   ═══════════════════════════════════════════ */
+let statsCounted = false;
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !statsCounted) {
+      statsCounted = true;
+      document.querySelectorAll('.stat-number').forEach(el => {
+        const target = parseInt(el.dataset.target), suffix = el.querySelector('.stat-suffix');
+        const duration = 2200, start = performance.now();
+        function tick(now) {
+          const p = Math.min((now - start) / duration, 1), eased = 1 - Math.pow(1 - p, 4);
+          const v = Math.round(target * eased).toLocaleString();
+          el.innerHTML = suffix ? v + '<span class="stat-suffix">' + suffix.textContent + '</span>' : v;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+/* ═══════════════════════════════════════════
+   RENDER STATS FROM DATA
+   ═══════════════════════════════════════════ */
+function renderStats() {
+  const row = document.getElementById('statsRow');
+  if (!row) return;
+  row.innerHTML = '';
+  currentStatsData.forEach(stat => {
+    const div = document.createElement('div');
+    div.className = 'stat-item reveal';
+    const suffixHtml = stat.suffix ? '<span class="stat-suffix">' + esc(stat.suffix) + '</span>' : '';
+    div.innerHTML =
+      '<div class="stat-number" data-target="' + parseInt(stat.value) + '">0' + suffixHtml + '</div>' +
+      '<div class="stat-label">' + esc(stat.label) + '</div>';
+    row.appendChild(div);
+  });
+  // Re-observe for reveal
+  row.querySelectorAll('.reveal').forEach(el => {
+    if (typeof revealObserver !== 'undefined') revealObserver.observe(el);
+  });
+  // Re-observe stats row for counter animation
+  statsCounted = false;
+  if (typeof statsObserver !== 'undefined') statsObserver.observe(row);
 }
 
 /* ═══════════════════════════════════════════
@@ -2221,27 +2276,7 @@ const svgObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.svg-line-draw').forEach(el => svgObserver.observe(el));
 
-let statsCounted = false;
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !statsCounted) {
-      statsCounted = true;
-      document.querySelectorAll('.stat-number').forEach(el => {
-        const target = parseInt(el.dataset.target), suffix = el.querySelector('.stat-suffix');
-        const duration = 2200, start = performance.now();
-        function tick(now) {
-          const p = Math.min((now - start) / duration, 1), eased = 1 - Math.pow(1 - p, 4);
-          const v = Math.round(target * eased).toLocaleString();
-          el.innerHTML = suffix ? v + '<span class="stat-suffix">' + suffix.textContent + '</span>' : v;
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-const statsRow = document.querySelector('.stats-row');
-if (statsRow) statsObserver.observe(statsRow);
+// Stats counter observer (initialized later by renderStats)
 
 /* ═══════════════════════════════════════════
    DETAIL MODAL
@@ -2364,7 +2399,7 @@ document.getElementById('cmsLoginClose').addEventListener('click', () => {
   }
 })();
 
-document.getElementById('cmsClose').addEventListener('click', () => { closeCMS(); renderTimeline(); renderGallery(); renderTeam(); });
+document.getElementById('cmsClose').addEventListener('click', () => { closeCMS(); renderTimeline(); renderGallery(); renderTeam(); renderStats(); });
 
 function renderCMSList() {
   cmsList.innerHTML = '';
@@ -2412,10 +2447,12 @@ document.querySelectorAll('.cms-tab').forEach(tab => {
     document.querySelectorAll('.cms-for-timeline').forEach(el => el.style.display = cmsActiveTab === 'timeline' ? '' : 'none');
     document.querySelectorAll('.cms-for-gallery').forEach(el => el.style.display = cmsActiveTab === 'gallery' ? '' : 'none');
     document.querySelectorAll('.cms-for-team').forEach(el => el.style.display = cmsActiveTab === 'team' ? '' : 'none');
+    document.querySelectorAll('.cms-for-stats').forEach(el => el.style.display = cmsActiveTab === 'stats' ? '' : 'none');
     // Render appropriate list
     if (cmsActiveTab === 'timeline') renderCMSList();
     else if (cmsActiveTab === 'gallery') renderCMSGalleryList();
-    else renderCMSTeamList();
+    else if (cmsActiveTab === 'team') renderCMSTeamList();
+    else renderCMSStatsList();
   });
 });
 
@@ -2530,6 +2567,54 @@ function openCMSTeamEdit(idx) {
   cmsEditOverlay.classList.add('active');
 }
 
+/* ─── CMS Stats List ─── */
+function renderCMSStatsList() {
+  cmsList.innerHTML = '';
+  currentStatsData.forEach((stat, idx) => {
+    const div = document.createElement('div');
+    div.className = 'cms-item';
+    div.innerHTML =
+      '<div class="cms-item-info">' +
+        '<div class="cms-item-type">stat</div>' +
+        '<div class="cms-item-title">' + esc(String(stat.value) + (stat.suffix || '')) + ' — ' + esc(stat.label) + '</div>' +
+      '</div>' +
+      '<div class="cms-item-actions">' +
+        (idx > 0 ? '<button class="cms-item-btn" data-action="up" data-idx="'+idx+'" title="Move up">\u2191</button>' : '') +
+        (idx < currentStatsData.length - 1 ? '<button class="cms-item-btn" data-action="down" data-idx="'+idx+'" title="Move down">\u2193</button>' : '') +
+        '<button class="cms-item-btn" data-action="edit" data-idx="'+idx+'" title="Edit">\u270E</button>' +
+        '<button class="cms-item-btn" data-action="delete" data-idx="'+idx+'" title="Delete">\u2715</button>' +
+      '</div>';
+    cmsList.appendChild(div);
+  });
+  cmsList.querySelectorAll('.cms-item-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action, idx = parseInt(btn.dataset.idx);
+      if (action === 'edit') openCMSStatEdit(idx);
+      else if (action === 'delete') { if (confirm('Delete this stat?')) { currentStatsData.splice(idx, 1); saveStats(currentStatsData); renderCMSStatsList(); } }
+      else if (action === 'up' && idx > 0) { [currentStatsData[idx-1], currentStatsData[idx]] = [currentStatsData[idx], currentStatsData[idx-1]]; saveStats(currentStatsData); renderCMSStatsList(); }
+      else if (action === 'down' && idx < currentStatsData.length - 1) { [currentStatsData[idx], currentStatsData[idx+1]] = [currentStatsData[idx+1], currentStatsData[idx]]; saveStats(currentStatsData); renderCMSStatsList(); }
+    });
+  });
+}
+
+/* ─── CMS Stat Edit ─── */
+function openCMSStatEdit(idx) {
+  const item = idx !== undefined ? currentStatsData[idx] : null;
+  const isNew = idx === undefined;
+  document.getElementById('cmsEditIndex').value = isNew ? '' : idx;
+  document.getElementById('cmsEditType').value = 'stat';
+  document.getElementById('cmsEditTitle').textContent = (isNew ? 'Add ' : 'Edit ') + 'Stat';
+  document.getElementById('cmsPhaseFields').style.display = 'none';
+  document.getElementById('cmsMilestoneFields').style.display = 'none';
+  document.getElementById('cmsGalleryFields').style.display = 'none';
+  document.getElementById('cmsTeamFields').style.display = 'none';
+  document.getElementById('cmsStatFields').style.display = '';
+  document.getElementById('cmsStatValue').value = item ? (item.value || '') : '';
+  document.getElementById('cmsStatSuffix').value = item ? (item.suffix || '') : '';
+  document.getElementById('cmsStatLabel').value = item ? (item.label || '') : '';
+  cmsEditOverlay.classList.add('active');
+}
+
 /* ─── CMS Edit Form ─── */
 function openCMSEdit(idx) {
   const item = idx !== undefined ? currentData[idx] : null;
@@ -2542,6 +2627,7 @@ function openCMSEdit(idx) {
   document.getElementById('cmsMilestoneFields').style.display = type === 'milestone' ? '' : 'none';
   document.getElementById('cmsGalleryFields').style.display = 'none';
   document.getElementById('cmsTeamFields').style.display = 'none';
+  document.getElementById('cmsStatFields').style.display = 'none';
 
   if (type === 'phase') {
     document.getElementById('cmsPhaseLabel').value = item ? item.label : '';
@@ -2639,6 +2725,9 @@ document.getElementById('cmsTeamPhotoUrl').addEventListener('input', function() 
 // Add Team Member button
 document.getElementById('cmsAddTeamMember').addEventListener('click', () => openCMSTeamEdit());
 
+// Add Stat button
+document.getElementById('cmsAddStat').addEventListener('click', () => openCMSStatEdit());
+
 // Save form
 cmsEditForm.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -2673,6 +2762,20 @@ cmsEditForm.addEventListener('submit', function(e) {
     saveTeam(currentTeamData);
     closeCMSEdit();
     renderCMSTeamList();
+    return;
+  }
+
+  if (type === 'stat') {
+    const item = {
+      value: parseInt(document.getElementById('cmsStatValue').value) || 0,
+      suffix: document.getElementById('cmsStatSuffix').value.trim(),
+      label: document.getElementById('cmsStatLabel').value.trim()
+    };
+    if (idx === '') { currentStatsData.push(item); }
+    else { currentStatsData[parseInt(idx)] = item; }
+    saveStats(currentStatsData);
+    closeCMSEdit();
+    renderCMSStatsList();
     return;
   }
 
@@ -2724,7 +2827,7 @@ document.getElementById('cmsAddMilestone').addEventListener('click', () => {
 
 // Export JSON
 document.getElementById('cmsExport').addEventListener('click', () => {
-  const exportData = { timeline: currentData, gallery: currentGalleryData, team: currentTeamData };
+  const exportData = { timeline: currentData, gallery: currentGalleryData, team: currentTeamData, stats: currentStatsData };
   const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a'); a.href = url; a.download = 'cms-data.json'; a.click();
@@ -2744,9 +2847,11 @@ document.getElementById('cmsImport').addEventListener('change', function() {
         if (Array.isArray(imported.timeline)) { currentData = imported.timeline; await saveData(currentData); }
         if (Array.isArray(imported.gallery)) { currentGalleryData = imported.gallery; await saveGallery(currentGalleryData); }
         if (Array.isArray(imported.team)) { currentTeamData = imported.team; await saveTeam(currentTeamData); }
+        if (Array.isArray(imported.stats)) { currentStatsData = imported.stats; await saveStats(currentStatsData); }
         if (cmsActiveTab === 'timeline') renderCMSList();
         else if (cmsActiveTab === 'gallery') renderCMSGalleryList();
-        else renderCMSTeamList();
+        else if (cmsActiveTab === 'team') renderCMSTeamList();
+        else renderCMSStatsList();
       } else { alert('Invalid format.'); }
     } catch(err) { alert('Failed to parse JSON: ' + err.message); }
   };
@@ -2764,9 +2869,12 @@ document.getElementById('cmsReset').addEventListener('click', async () => {
     } else if (cmsActiveTab === 'gallery') {
       currentGalleryData = JSON.parse(JSON.stringify(DEFAULT_GALLERY));
       await saveGallery(currentGalleryData); renderCMSGalleryList();
-    } else {
+    } else if (cmsActiveTab === 'team') {
       currentTeamData = JSON.parse(JSON.stringify(DEFAULT_TEAM));
       await saveTeam(currentTeamData); renderCMSTeamList();
+    } else {
+      currentStatsData = JSON.parse(JSON.stringify(DEFAULT_STATS));
+      await saveStats(currentStatsData); renderCMSStatsList();
     }
   }
 });
@@ -2777,6 +2885,7 @@ document.getElementById('cmsReset').addEventListener('click', async () => {
 renderTimeline();
 renderGallery();
 renderTeam();
+renderStats();
 
 let roadResizeTimer;
 window.addEventListener('resize', () => {
