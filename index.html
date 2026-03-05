@@ -439,6 +439,12 @@ button { font-family: var(--font); }
   transition: all 0.5s var(--ease-smooth); position: relative;
 }
 .partner-card:hover { background: rgba(255,255,255,0.02); }
+.partner-logo {
+  height: 48px; margin-bottom: 24px; opacity: 0.7;
+  transition: opacity 0.5s var(--ease-smooth);
+  object-fit: contain;
+}
+.partner-card:hover .partner-logo { opacity: 1; }
 .partner-abbr {
   font-size: 0.58rem; font-weight: 600; letter-spacing: 0.25em;
   text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px;
@@ -1506,6 +1512,7 @@ button { font-family: var(--font); }
     <div class="section-desc reveal">This initiative thrives through the combined expertise of leading international and local institutions committed to water sustainability.</div>
     <div class="partners-grid stagger-children">
       <div class="partner-card reveal">
+        <img class="partner-logo" src="logos/iwmi-logo.jpg" alt="IWMI Logo">
         <div class="partner-abbr">IWMI</div>
         <h3>IWMI</h3>
         <div class="partner-full">International Water Management Institute</div>
@@ -1513,6 +1520,7 @@ button { font-family: var(--font); }
         <div class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
       <div class="partner-card reveal">
+        <img class="partner-logo" src="logos/fcdo-logo.svg" alt="FCDO Logo">
         <div class="partner-abbr">FCDO</div>
         <h3>FCDO</h3>
         <div class="partner-full">UK Foreign, Commonwealth & Development Office</div>
@@ -1520,10 +1528,11 @@ button { font-family: var(--font); }
         <div class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
       <div class="partner-card reveal">
-        <div class="partner-abbr">UoJ</div>
-        <h3>University of Jaffna</h3>
-        <div class="partner-full">Faculty of Science — Hydrogeology Division</div>
-        <p>Local academic partner providing regional hydrogeological expertise, field research support, and the citizen science educational framework.</p>
+        <img class="partner-logo" src="logos/northern-province-sri-lanka-emblem.jpg" alt="Northern Province Emblem">
+        <div class="partner-abbr">NPC</div>
+        <h3>Northern Province</h3>
+        <div class="partner-full">Northern Provincial Council — Sri Lanka</div>
+        <p>Regional governance partner providing institutional support, local coordination, and policy alignment for sustainable groundwater management across the Jaffna Peninsula.</p>
         <div class="partner-arrow">Learn more <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
     </div>
@@ -1606,7 +1615,7 @@ button { font-family: var(--font); }
       <div class="footer-partners-row">
         <div class="footer-partner-badge">IWMI</div>
         <div class="footer-partner-badge">FCDO</div>
-        <div class="footer-partner-badge">UoJ</div>
+        <div class="footer-partner-badge">NPC</div>
       </div>
     </div>
     <div class="footer-links">
