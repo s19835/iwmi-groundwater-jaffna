@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Improving Groundwater Management — Jaffna Peninsula</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="logo-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -136,7 +139,9 @@ button { font-family: var(--font); }
   font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--white); transition: color 0.6s;
+  display: flex; align-items: center; gap: 10px;
 }
+.nav-logo img { height: 28px; width: 28px; border-radius: 6px; }
 .nav.scrolled .nav-logo { color: var(--black); }
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a {
@@ -1381,7 +1386,7 @@ button { font-family: var(--font); }
 
 <!-- Navigation -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">JGWM</a>
+  <a href="#" class="nav-logo"><img src="logo-192.png" alt="Logo">JGWM</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#partners">Partners</a></li>
@@ -1592,7 +1597,7 @@ button { font-family: var(--font); }
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo">
-        <div class="footer-logo-dot"></div>
+        <img src="logo-192.png" alt="Logo" style="width:32px;height:32px;border-radius:6px;">
         <span>Jaffna Groundwater Management Project</span>
       </div>
       <p>A research-driven initiative to sustainably manage the Jaffna Peninsula's groundwater resources through science, community engagement, and collaborative governance.</p>
