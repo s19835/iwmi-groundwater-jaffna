@@ -404,7 +404,7 @@ button { font-family: var(--font); }
 
 /* Stats */
 .stats-row {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
   margin-top: 100px; border-top: 1px solid rgba(0,0,0,0.06);
 }
 .stat-item {
@@ -1105,6 +1105,7 @@ button { font-family: var(--font); }
 @media (max-width: 1024px) {
   .section { padding: 100px 32px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
   .gallery-item:nth-child(1) { grid-column: span 2; }
@@ -1423,7 +1424,7 @@ button { font-family: var(--font); }
     </div>
     <div class="hero-side">
       <div class="hero-side-label">Project Duration</div>
-      <div class="hero-side-phase">2025 &mdash; 2026</div>
+      <div class="hero-side-phase">2024 &mdash; 2026</div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1466,17 +1467,17 @@ button { font-family: var(--font); }
     <div class="about-grid">
       <div class="reveal">
         <p class="about-text">
-          Groundwater is the primary water source for the Jaffna Peninsula, yet it remains increasingly stressed by over-extraction, pollution, governance gaps, and climate variability. This project, led by IWMI with support from the UK's FCDO, adopts a research-driven, multi-institutional approach to better understand and sustainably manage this fragile resource.
+          The Jaffna Peninsula relies heavily on a fragile freshwater lens overlying a saline aquifer, increasingly threatened by rising demand, saline intrusion, agricultural pollution, and climate variability. This project, led by IWMI with support from the UK's FCDO and the Northern Provincial Council, adopts a multi-pronged, science-driven approach to develop multisectoral pathways for sustainable groundwater management.
         </p>
         <blockquote class="about-pullquote">
-          By combining scientific monitoring, community-led citizen science and policy engagement, we create the most comprehensive evidence base ever assembled for Jaffna's groundwater system.
+          By combining real-time monitoring across 15 stations, school-based citizen science in 22 schools, community engagement with 225 farmers, and a Multi-Stakeholder Platform, we are building the most comprehensive evidence base ever assembled for Jaffna's groundwater system.
         </blockquote>
       </div>
       <div class="about-cards stagger-children">
         <div class="about-card reveal">
           <div class="about-card-label">Mission</div>
-          <h3>Effective Pathways for Sustainable Management</h3>
-          <p>To identify and promote effective pathways for improved groundwater management by addressing threats to water quantity and quality — safeguarding sustainable agriculture, enhancing climate resilience, and upholding environmental integrity through scientific research and collaborative action.</p>
+          <h3>Multisectoral Pathways for Improved Management</h3>
+          <p>To identify multisectoral pathways for improved management of Jaffna's groundwater resources — mitigating risks to quantity and quality, ensuring resilient agriculture and livelihoods, and supporting climate change adaptation and environmental protection. Aligned with SDG 6 (Clean Water) and SDG 13 (Climate Action).</p>
         </div>
         <div class="about-card reveal">
           <div class="about-card-label">Vision</div>
@@ -1627,7 +1628,7 @@ button { font-family: var(--font); }
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025–2026 Jaffna Groundwater Management Project. All rights reserved.</p>
+    <p>&copy; 2024–2026 Jaffna Groundwater Management Project. All rights reserved.</p>
     <p>Led by IWMI &bull; Supported by UK FCDO</p>
   </div>
 </footer>
@@ -1705,7 +1706,7 @@ button { font-family: var(--font); }
       <div id="cmsPhaseFields">
         <div class="cms-field"><label>Label (e.g. Phase 1)</label><input id="cmsPhaseLabel" placeholder="Phase 1"></div>
         <div class="cms-field"><label>Name</label><input id="cmsPhaseName" placeholder="Foundation"></div>
-        <div class="cms-field"><label>Period</label><input id="cmsPhasePeriod" placeholder="2025 – June 2026"></div>
+        <div class="cms-field"><label>Period</label><input id="cmsPhasePeriod" placeholder="August 2024 – March 2025"></div>
       </div>
       <!-- Milestone fields -->
       <div id="cmsMilestoneFields">
@@ -1778,92 +1779,93 @@ button { font-family: var(--font); }
    DEFAULT TIMELINE DATA
    ═══════════════════════════════════════════ */
 const DEFAULT_TIMELINE = [
-  { type:'phase', label:'Phase 1', name:'Foundation', period:'2025 \u2013 June 2025' },
-  { type:'milestone', phase:'Phase 1.1', date:'Jan \u2013 Feb 2025', title:'Stakeholder Mobilization & Problem Mapping',
-    summary:'Initial consultations to identify groundwater challenges and build consensus on the MSP.',
-    desc:'Conducted initial consultations with government agencies, academics, NGOs, and community leaders to identify groundwater challenges and build consensus on the need for a Multi-Stakeholder Platform.',
-    bullets:['Identified groundwater challenges: salinity, overuse, pollution, and poor data availability','Lack of evidence-based decision on natural resources management, specifically groundwater','Built consensus on the need for a Multi-Stakeholder Platform (MSP) for efficient decision making at higher level'], photo:'' },
-  { type:'milestone', phase:'Phase 1.2', date:'Mar \u2013 May 2025', title:'Establishing the Multi-Stakeholder Platform (MSP)',
-    summary:'MSP co-designed to enhance institutional collaboration and improve decision-making.',
-    desc:'MSP concept co-designed to enhance institutional collaboration and improve decision-making for sustainable groundwater resource management.',
-    bullets:['Steering committee + thematic working groups drafted','Terms of Reference (TOR) created with clear coordination and governance roles','First MSP meeting held with 45+ participants','Focus on data sharing, policy harmonization, community engagement, and capacity building'], photo:'' },
-  { type:'milestone', phase:'Phase 1.3', date:'Jun \u2013 Sep 2025', title:'School-Based Citizen Science Rollout',
-    summary:'22 schools selected with 2,000+ students in the Groundwater Awareness program.',
-    desc:'22 schools selected focusing on enhancing awareness, with more than 2,000 students participating in the Groundwater Awareness program.',
-    bullets:['110 monitoring points established with student-led data collection','First wave of groundwater level and EC readings published','Students trained in basic hydrogeology, water testing protocols, and data recording','Monthly data submitted via mobile app and web portal'], photo:'' },
-  { type:'milestone', phase:'Phase 1.4', date:'Aug \u2013 Nov 2025', title:'Groundwater Monitoring Network Established',
-    summary:'15 monitoring wells installed with automated real-time data collection.',
-    desc:'Enhancement of scientific evidence-based decisions through 15 monitoring wells installed across the peninsula, targeting production-scale groundwater extraction locations.',
-    bullets:['Automated, real-time groundwater level & quality monitoring initiated','Instrumentation, GIS integration completed','Sensors installed to measure water level, temperature, pH, and electrical conductivity','Data transmitted hourly to central database for analysis and visualization'], photo:'' },
-  { type:'milestone', phase:'Phase 1.5', date:'Dec 2025 \u2013 Mar 2026', title:'Data Integration & Early Analysis',
-    summary:'Citizen science data integrated with monitoring network; interactive dashboards developed.',
-    desc:'Integration of citizen science data with automated monitoring network and development of interactive dashboards for stakeholders.',
-    bullets:['Preliminary analysis revealing seasonal groundwater level fluctuations and salinity intrusion patterns','Identification of critical zones requiring immediate intervention','Second MSP meeting convened to review initial findings'], photo:'' },
-  { type:'milestone', phase:'Phase 1.6', date:'Apr \u2013 Jun 2026', title:'Phase 1 Wrap-Up & Learnings',
-    summary:'MSP validated with quarterly meetings; citizen science model proven with high engagement.',
-    desc:'MSP structure validated with successful quarterly meetings and working group outputs. Citizen science model proven successful with high student and teacher engagement.',
-    bullets:['Data gaps documented for Phase 2, including need for expanded spatial coverage','Need for groundwater policy reform identified','Phase 1 evaluation documenting successes, challenges, and recommendations','Stakeholder feedback collected for Phase 2 design refinements'], photo:'' },
-  { type:'phase', label:'Phase 2', name:'Expansion', period:'July 2026 \u2013 December 2026' },
-  { type:'milestone', phase:'Phase 2.1', date:'Jul \u2013 Sep 2026', title:'Phase 2 Launch & Expansion Planning',
-    summary:'Scale-up strategy finalized based on Phase 1 learnings.',
-    desc:'Scale-up strategy finalized based on Phase 1 learnings, with additional funding secured for expanded monitoring network.',
-    bullets:['Partnerships formalized with regional water authorities and international research institutions','Recruitment of additional technical staff and field coordinators'], photo:'' },
-  { type:'milestone', phase:'Phase 2.2', date:'Oct \u2013 Dec 2026', title:'Expanded Citizen Science Program',
-    summary:'Program expanded to 50+ schools with 5,000+ students engaged.',
-    desc:'Program expanded to 50+ schools across Jaffna District with a target of 5,000+ students engaged in groundwater monitoring.',
-    bullets:['Advanced training modules introduced: GIS mapping, water quality analysis, community reporting','Development of youth ambassador program for peer education'], photo:'' },
-  { type:'milestone', phase:'Phase 2.3', date:'Jan \u2013 Mar 2026', title:'Enhanced Monitoring Infrastructure',
-    summary:'30 additional wells installed, bringing total to 45 with weather stations.',
-    desc:'30 additional monitoring wells installed, bringing total to 45 wells with expanded coverage across the peninsula.',
-    bullets:['Installation of weather stations for rainfall-groundwater recharge correlation','Upgrade of data transmission systems for improved reliability'], photo:'' },
-  { type:'milestone', phase:'Phase 2.4', date:'Apr \u2013 Jun 2026', title:'Policy Development & Advocacy',
-    summary:'Evidence-based policy briefs drafted; licensing framework developed.',
-    desc:'Technical working group formed to draft groundwater management policy with evidence-based policy briefs prepared using Phase 1\u20132 data.',
-    bullets:['Stakeholder consultations held with provincial and national government agencies','Development of groundwater abstraction licensing framework','Community awareness campaigns on sustainable water use practices'], photo:'' },
-  { type:'milestone', phase:'Phase 2.5', date:'Jul \u2013 Sep 2026', title:'Capacity Building & Knowledge Transfer',
-    summary:'Training programs for officials and farmers on data interpretation and resilient practices.',
-    desc:'Training programs conducted for government officials on groundwater data interpretation, alongside workshop series for farmers on climate-resilient irrigation practices.',
-    bullets:['Development of groundwater management guidelines for local authorities','Establishment of regional groundwater data center','Publication of technical reports and scientific papers'], photo:'' },
-  { type:'milestone', phase:'Phase 2.6', date:'Oct \u2013 Dec 2026', title:'Phase 2 Conclusion & Sustainability',
-    summary:'Comprehensive 2+ year analysis completed; MSP institutionalized.',
-    desc:'Comprehensive analysis of 2+ years of monitoring data with groundwater vulnerability mapping completed for the entire peninsula.',
-    bullets:['MSP institutionalized with formal recognition by provincial government','Long-term sustainability plan developed for continued monitoring and governance','Final project evaluation and impact assessment','Roadmap created for Phase 3 or transition to government-led program'], photo:'' }
+  { type:'phase', label:'Phase 1', name:'Foundation & Evidence Building', period:'August 2024 \u2013 March 2025' },
+  { type:'milestone', phase:'Output 1', date:'Aug \u2013 Dec 2024', title:'Groundwater Synthesis Report',
+    summary:'Comprehensive review of 76 studies on groundwater use and management in Jaffna.',
+    desc:'A systematic review was conducted to assess the state of groundwater knowledge in the Jaffna Peninsula, covering availability, quality, socioeconomic aspects, and governance.',
+    bullets:['Reviewed 76 references focused on Jaffna and the Northern Province','50% of studies focused on groundwater quality; only 4% on socioeconomic aspects','Found groundwater recharge (0.57 MCM/yr) is less than extraction (0.66 MCM/yr)','Salinity increased 1.6-fold over 20 years with 8,178 ha (43%) of paddy land abandoned','Over 100,000 dug wells identified across the peninsula','Identified critical gaps: need for systematic monitoring and socioeconomic research'], photo:'' },
+  { type:'milestone', phase:'Output 2', date:'Sep 2024 \u2013 Mar 2025', title:'Strengthened Groundwater Monitoring System',
+    summary:'15 new solar-powered monitoring wells installed with real-time data transmission.',
+    desc:'Established new monitoring wells at strategically selected locations to improve understanding of aquifer dynamics and serve as sentinel wells for early detection of saline intrusion into freshwater lenses.',
+    bullets:['15 tube well-based monitoring stations constructed across the peninsula','Solar-powered data loggers measuring water level (\u00b11cm), temperature (\u00b10.5\u00b0C), and EC (0\u201320,000 \u03bcS/cm)','Data uploaded every 15 minutes to IoT platform with real-time dashboard','Observation well "clusters" developed to detect production-scale extraction impacts','Geophysical surveys (electrical resistivity) conducted at selected locations','Stations at Vempirai, Nilawarai, Pokkanai, Thaiyiddy, Vaddukkodai, Vallipuram, Velanai, Allaipiddi, Karainagar, Thalayadi, Iyyakachchi, and Murunkan'], photo:'' },
+  { type:'milestone', phase:'Output 3', date:'Nov 2024 \u2013 Mar 2025', title:'Land & Water Productivity Assessment',
+    summary:'225 farmers surveyed; crop water productivity assessed using satellite and field data.',
+    desc:'An integrated assessment of agricultural productivity combining socioeconomic surveys with satellite-based measurements of water use, focusing on water productivity defined as yield per unit of water consumed.',
+    bullets:['Structured questionnaire conducted across 3 divisional secretariat divisions in Feb 2025','225 farmer respondents (85% male, 15% female) representing diverse households','Crop water consumption estimated using USGS evapotranspiration data at 30m resolution','Onion (0.33 kg/m\u00b3) and chilli (0.19 kg/m\u00b3) showed highest water productivity','Recommendations to prioritize onion, pumpkin, chilli, and capsicum for high water productivity','Identified spatial hotspots of land use during the Yala (dry) season'], photo:'' },
+  { type:'milestone', phase:'Output 4a', date:'Oct 2024 \u2013 Mar 2025', title:'Multi-Stakeholder Platform (MSP) Established',
+    summary:'MSP created with steering committee, expert technical committee, and advisory committee.',
+    desc:'Established a Multi-Stakeholder Platform to strengthen interagency collaboration and community participation in managing groundwater, with a formal governance structure validated through stakeholder consultations.',
+    bullets:['Three committees formed: Steering Committee, Expert Technical Committee, External Advisory Committee','Steering Committee chaired by Chief Secretary \u2013 NP & District Secretary \u2013 Jaffna','Core members include central and provincial government agencies, academics, and community representatives','Guide to Convention prepared with structure, institutional arrangements, and operational procedures','Short-term, medium-term, and long-term activity plans developed','Platform designed to be neutral across all sectoral interests'], photo:'' },
+  { type:'milestone', phase:'Output 4b', date:'Jan \u2013 Mar 2025', title:'School-Based Citizen Science Program',
+    summary:'22 schools, 110 students trained to monitor groundwater levels and salinity using EC meters.',
+    desc:'A school engagement program launched in collaboration with the Ministry of Education, Jaffna, training students in groundwater monitoring to build a youth-led knowledge network and raise community awareness.',
+    bullets:['22 schools selected across the peninsula representing various groundwater salinity levels','Official launch on 28 Jan 2025 at Hoover Auditorium, University of Jaffna','Honoured guests: Catherine West MP (UK Minister), Andrew Patrick (British High Commissioner)','110 students trained (5 per school) \u2014 those with dug wells at home for real-world connection','Each school issued 1 EC meter with standardized data collection sheets','Students conduct weekly monitoring of water levels and collect water samples','Interactive workshops held at all 22 schools with quizzes, poster activities, and prizes','Final workshop on 20 June 2025 attended by the British High Commissioner'], photo:'' },
+  { type:'milestone', phase:'Output 4c', date:'Nov 2024 \u2013 Mar 2025', title:'Rainwater Harvesting & Pond Management',
+    summary:'Renovated rainwater systems at 2 institutions; compiled data on 1,080 ponds across Jaffna.',
+    desc:'Demonstrated sustainable alternatives to groundwater use through renovation of rainwater harvesting systems and comprehensive mapping of pond resources for recharge planning.',
+    bullets:['Renovated rainwater harvesting at Kayts Base Hospital (48m\u00b3 capacity tank)','Renovated system at J/Maravanpulo Sakalakalavalli Vidyalayam (50m\u00b3 capacity)','Systems now serve as demonstration sites for sustainable water practices','Collaborated with Dept. of Agrarian Development to compile data on 1,080 ponds','Remote sensing analysis identified 440 active ponds visible on the ground','Combined field and geospatial data provides foundation for groundwater recharge planning'], photo:'' },
+  { type:'milestone', phase:'Output 5', date:'Dec 2024 \u2013 Mar 2025', title:'Feasibility Studies on GW Management Interventions',
+    summary:'Site-specific interventions identified including MAR, rainwater harvesting, and solar pumps.',
+    desc:'Feasibility studies conducted to identify and evaluate suitable groundwater management interventions for hotspot areas, co-developed with stakeholders and tailored to local conditions.',
+    bullets:['Managed Aquifer Recharge (MAR) methods assessed: rooftop collection, direct injection, pond-based recharge','Salinity barriers (small dams/regulators) evaluated for coastal areas','Rainwater harvesting promoted via household/public rooftops and ground-level systems','Solar pumps, crop rotation, and agroecological practices recommended','Desalination and treated wastewater reuse identified as long-term pathways','Integrated modelling framework proposed for simulating intervention impacts'], photo:'' },
+  { type:'phase', label:'Phase 2', name:'Scaling & Sustainability', period:'April 2025 \u2013 March 2026' },
+  { type:'milestone', phase:'Phase 2.1', date:'Apr \u2013 Jun 2025', title:'Expanded Monitoring & Data Integration',
+    summary:'Enhanced monitoring network with additional parameters and real-time data integration.',
+    desc:'Building on Phase 1 infrastructure, expanding monitoring capacity with additional water quality indicators and integrating citizen science data with automated systems.',
+    bullets:['Additional water quality parameters incorporated into monitoring stations','Citizen science data integrated with automated monitoring dashboard','Groundwater vulnerability mapping initiated for the entire peninsula','Data-driven spatial mapping of quality zones and extraction hotspots'], photo:'' },
+  { type:'milestone', phase:'Phase 2.2', date:'Jul \u2013 Sep 2025', title:'Community Stewardship & Education Scale-Up',
+    summary:'Expanded citizen science to wider communities; advanced training for school participants.',
+    desc:'Scaling awareness and education programs beyond schools to engage wider communities, promoting collective stewardship of groundwater resources.',
+    bullets:['Awareness programs expanded beyond schools targeting farmers and community groups','Advanced training modules for existing school participants','Youth ambassador program development for peer education','Collaboration with Ministry of Education on environmental learning goals'], photo:'' },
+  { type:'milestone', phase:'Phase 2.3', date:'Oct \u2013 Dec 2025', title:'Policy Development & Stakeholder Advocacy',
+    summary:'Evidence-based policy briefs; MSP operationalized with regular committee meetings.',
+    desc:'Translating Phase 1 research findings into actionable policy recommendations through the MSP governance framework.',
+    bullets:['Evidence-based policy briefs prepared using monitoring and survey data','MSP committees operationalized with regular scheduled meetings','Stakeholder consultations with provincial and national government agencies','Groundwater contamination hotspot mapping for targeted interventions'], photo:'' },
+  { type:'milestone', phase:'Phase 2.4', date:'Jan \u2013 Mar 2026', title:'Project Conclusion & Sustainability Handover',
+    summary:'Comprehensive analysis completed; MSP institutionalized with government ownership.',
+    desc:'Final phase focusing on comprehensive data analysis, sustainability planning, and formal transition of monitoring and governance systems to local institutions.',
+    bullets:['Comprehensive multi-year analysis of groundwater trends and intervention impacts','MSP institutionalized with formal recognition by Northern Provincial Administration','Long-term sustainability plan for continued monitoring by NWS&DB','Final project evaluation documenting successes, challenges, and recommendations','Roadmap for Phase 3 or transition to government-led program'], photo:'' }
 ];
 
 /* ═══════════════════════════════════════════
    DEFAULT GALLERY DATA
    ═══════════════════════════════════════════ */
 const DEFAULT_GALLERY = [
-  { title:'Stakeholder Consultation', subtitle:'Multi-agency coordination meeting', desc:'Multi-agency coordination meeting with regional water authorities and community leaders', image:'', gradient:'linear-gradient(135deg, #F2F0E4, #e6d5c3, #d4b896)' },
-  { title:'Well Installation', subtitle:'Monitoring infrastructure setup', desc:'Monitoring well installation at production-scale extraction sites across the Jaffna Peninsula', image:'', gradient:'linear-gradient(135deg, #1a1a1a, #2d2d2d)' },
-  { title:'Student Water Monitoring', subtitle:'Citizen science in action', desc:'Students collecting groundwater level and electrical conductivity readings at monitoring points', image:'', gradient:'linear-gradient(135deg, #e8e6dc, #c8c4b4)' },
-  { title:'GIS Data Integration', subtitle:'Real-time telemetry dashboard', desc:'Spatial data mapping and real-time telemetry dashboard for groundwater analysis', image:'', gradient:'linear-gradient(135deg, #2a1a0a, #4a2a10, #8a4a15)' },
-  { title:'Water Quality Testing', subtitle:'Field sample analysis', desc:'Field analysis of salinity, pH levels, and pollutant concentration in groundwater samples', image:'', gradient:'linear-gradient(135deg, #1a1a1a, #333333)' },
-  { title:'MSP Workshop', subtitle:'Governance co-design session', desc:'Co-designing the Multi-Stakeholder Platform governance structure with institutional partners', image:'', gradient:'linear-gradient(135deg, #F2F0E4, #d8d4c4)' },
-  { title:'School Awareness Program', subtitle:'Educating 2,000+ students', desc:'Groundwater awareness sessions conducted across 22 schools in the Jaffna Peninsula', image:'', gradient:'linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a)' },
-  { title:'Community Engagement', subtitle:'Local farmer workshops', desc:'Working with local farming communities on sustainable water extraction practices', image:'', gradient:'linear-gradient(135deg, #d4a87a, #c4956a, #e8d4b8)' }
+  { title:'Geophysical Site Investigation', subtitle:'Nilawarai WSS, Jaffna', desc:'Initial geophysical surveys including electrical resistivity soundings at Nilawarai water supply scheme to evaluate soil and rock conditions for monitoring well placement', image:'', gradient:'linear-gradient(135deg, #2a1a0a, #4a2a10, #8a4a15)' },
+  { title:'Solar-Powered Monitoring Station', subtitle:'Vallipuram groundwater well field', desc:'Completed groundwater monitoring station at Point Pedro with solar-powered data loggers transmitting water level, temperature, and EC readings every 15 minutes', image:'', gradient:'linear-gradient(135deg, #e8e6dc, #c8c4b4)' },
+  { title:'Real-Time Data Dashboard', subtitle:'IoT monitoring platform', desc:'Web-based groundwater monitoring dashboard showing real-time water level and electrical conductivity data from stations across the Jaffna Peninsula', image:'', gradient:'linear-gradient(135deg, #1a1a1a, #2d2d2d)' },
+  { title:'Citizen Science Launch', subtitle:'28 January 2025, University of Jaffna', desc:'Official launch of the school-based citizen science initiative at Hoover Auditorium with UK Minister Catherine West MP and British High Commissioner Andrew Patrick', image:'', gradient:'linear-gradient(135deg, #F2F0E4, #d8d4c4)' },
+  { title:'EC Meter Training', subtitle:'Student workshops across 22 schools', desc:'Students learning to measure water salinity using EC meters during hands-on training sessions conducted at all 22 selected schools', image:'', gradient:'linear-gradient(135deg, #F2F0E4, #e6d5c3, #d4b896)' },
+  { title:'School Competitions', subtitle:'Quizzes, posters & prize-giving', desc:'Interactive workshops with quizzes and poster activities promoting groundwater awareness, with winners recognized at the final event attended by the British High Commissioner', image:'', gradient:'linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a)' },
+  { title:'Rainwater Harvesting Renovation', subtitle:'Kayts Hospital & Vidyalayam', desc:'Renovation of rainwater harvesting systems at Kayts Base Hospital (48m\u00b3) and J/Maravanpulo Sakalakalavalli Vidyalayam (50m\u00b3) as demonstration sites', image:'', gradient:'linear-gradient(135deg, #1a1a1a, #333333)' },
+  { title:'Pond Mapping', subtitle:'Remote sensing & field surveys', desc:'Remote sensing-based pond detection identifying 440 active ponds from 1,080 compiled records, providing foundation for groundwater recharge planning', image:'', gradient:'linear-gradient(135deg, #d4a87a, #c4956a, #e8d4b8)' }
 ];
 
 /* ═══════════════════════════════════════════
    DEFAULT TEAM DATA
    ═══════════════════════════════════════════ */
 const DEFAULT_TEAM = [
-  { name:'Dr. Arun Thiyagarajah', role:'Project Lead & Principal Investigator', desc:'Leads overall project strategy, coordinating between IWMI research teams and local stakeholders to ensure scientific rigor and measurable community impact.', photo:'' },
-  { name:'Dr. Kavitha Sriskandarajah', role:'Senior Hydrogeologist', desc:'Oversees groundwater monitoring, aquifer analysis, and water quality assessments across the Jaffna Peninsula\'s karst limestone system.', photo:'' },
-  { name:'Thanuja Kumarasamy', role:'Community Engagement Lead', desc:'Designs and implements the citizen science program, working with 22 schools and 2,000+ students to build grassroots monitoring capacity.', photo:'' },
-  { name:'Pradeep Nadarajah', role:'GIS & Data Analytics Specialist', desc:'Manages spatial data integration, real-time telemetry systems, and the groundwater information dashboard powering evidence-based decisions.', photo:'' },
-  { name:'Dr. Niroshini Fernando', role:'Policy & Governance Advisor', desc:'Facilitates the Multi-Stakeholder Platform and bridges research findings to actionable policy recommendations for regional authorities.', photo:'' },
-  { name:'Sathees Rajalingam', role:'Field Operations Coordinator', desc:'Coordinates on-ground activities including well installation, instrument calibration, equipment maintenance, and local stakeholder meetings.', photo:'' }
+  { name:'Dimuthu Malalgoda', role:'Project Leader', desc:'Leads overall project strategy and coordination between IWMI research teams, government agencies, and local stakeholders to ensure integrated groundwater management outcomes.', photo:'' },
+  { name:'Lal Muthuwatta', role:'Co-Project Leader', desc:'Co-leads the project with expertise in water resources management, overseeing the scientific framework and monitoring system design across the Jaffna Peninsula.', photo:'' },
+  { name:'Nishadi Eriyagama', role:'Senior Researcher \u2014 Water Resources', desc:'Leads research on groundwater availability, climate variability impacts, and water productivity assessments combining satellite data with field surveys.', photo:'' },
+  { name:'Mahesh Jampani', role:'Senior Researcher \u2014 Groundwater', desc:'Oversees groundwater monitoring system design, aquifer analysis, and the feasibility studies on managed aquifer recharge and sustainable interventions.', photo:'' },
+  { name:'Karthikeyan Matheswaran', role:'Remote Sensing & GIS Specialist', desc:'Manages spatial data analysis, satellite-based crop water estimation, and geospatial mapping of ponds and groundwater extraction hotspots.', photo:'' },
+  { name:'Mohamad Aheeyar', role:'Socioeconomic Research Lead', desc:'Leads the socioeconomic survey work with 225 farmer respondents and stakeholder analysis for the Multi-Stakeholder Platform development.', photo:'' },
+  { name:'Radheeka Jirasinha', role:'Research Associate', desc:'Supports groundwater quality analysis, data integration from monitoring stations, and coordination of the school-based citizen science program activities.', photo:'' },
+  { name:'Dilmi Sithara', role:'Research Associate & Project Coordinator', desc:'Coordinates field operations, community engagement activities, CMS content management, and liaison between research teams and local partners.', photo:'' },
+  { name:'Suvasthigha Puvanethirarajah', role:'Research Associate \u2014 Field Operations', desc:'Manages on-ground activities including monitoring well installation coordination, school program logistics, and stakeholder meeting organization in Jaffna.', photo:'' }
 ];
 
 /* ═══════════════════════════════════════════
    DEFAULT STATS DATA
    ═══════════════════════════════════════════ */
 const DEFAULT_STATS = [
+  { value: 15, suffix: '', label: 'Monitoring Stations' },
   { value: 22, suffix: '', label: 'Schools Engaged' },
-  { value: 2000, suffix: '+', label: 'Students Participated' },
-  { value: 110, suffix: '', label: 'Monitoring Points' },
-  { value: 15, suffix: '', label: 'Wells Installed' }
+  { value: 110, suffix: '', label: 'Students Trained' },
+  { value: 225, suffix: '', label: 'Farmers Surveyed' },
+  { value: 1080, suffix: '', label: 'Ponds Mapped' },
+  { value: 76, suffix: '', label: 'Studies Reviewed' }
 ];
 
 /* ═══════════════════════════════════════════
